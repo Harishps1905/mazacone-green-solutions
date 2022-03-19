@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  position: absolute;
+  width: 94vw;
+  height: 95vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgba(75, 75, 75, 0.822);
+  color: rgb(8, 8, 8);
+  align-items: center;
+  border-radius: 20px;
+  font-size: 8vw;
+  font-family: DosisBold;
+  backdrop-filter: blur(2px);
+}
+.menuClose {
+  position: absolute;
+  top: 2vh;
+  right: 3vw;
+  height: 25px;
+  width: auto;
+}

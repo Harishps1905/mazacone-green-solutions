@@ -1,16 +1,27 @@
+/* #7cfe61 */
+/* #0096ff */
 .App,
 .AppLoader {
   min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+}
+.AppLoader {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: red;
-  background-color: #575a6c;
-  position: relative;
 }
-.App::before {
+.App {
+  background-image: url("./assets/mazacone_logo.png");
+  min-width: 260px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgb(219, 219, 219);
+}
+/* .App::before {
   content: "";
   position: absolute;
   top: 0;
@@ -20,8 +31,8 @@
   border-radius: 407px 0 0 404px;
   background-color: #fff;
   animation: fadeInAnimation ease 3s 1 forwards;
-  /* animation: 3s ease-in 1s infinite forwards both running fadeInAnimation; */
-}
+  animation: 3s ease-in 1s infinite forwards both running fadeInAnimation;
+} */
 .font-face-gm {
   font-family: "DosisBold";
 }
@@ -33,4 +44,15 @@
   100% {
     opacity: 1;
   }
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.dummy {
+  height: 900px;
+  padding-top: 100px;
 }

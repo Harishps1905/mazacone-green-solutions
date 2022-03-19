@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
 import Loader from "./components/Loader/Loader";
+import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
+import Products from "./components/pages/Products/Products";
+import Services from "./components/pages/Services/Services";
+import AboutUs from "./components/pages/AboutUs/AboutUs";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function demoAsyncCall() {
   return new Promise((resolve) => setTimeout(() => resolve(), 2500));
@@ -32,11 +38,19 @@ class App extends Component {
     }
 
     return (
-      <>
-        <div className={bgAnime ? "App" : "AppLoader"}></div>
-
-        <h1 className="font-face-gm">hello world</h1>
-      </>
+      <Router>
+        <div className={bgAnime ? "App" : "AppLoader"}>
+          <Navigation />
+          <div className="dummy">
+            <Routes>
+              <Route path="/Products" element={<Products />} />
+              <Route path="/Services" element={<Services />} />
+              <Route path="/AboutUs" element={<AboutUs />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }

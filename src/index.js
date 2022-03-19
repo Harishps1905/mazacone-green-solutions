@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./reset/reset.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./fonts/Dosis/Dosis-Bold.ttf";
+import "./fonts/Dosis/Dosis-ExtraBold.ttf";
+import "./fonts/Dosis/Dosis-Light.ttf";
+import "./fonts/Dosis/Dosis-Regular.ttf";
 
 ReactDOM.render(
   <React.StrictMode>

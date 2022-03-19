@@ -1,5 +1,5 @@
 .App-logo {
-  height: 10vmin;
+  height: 25vmin;
   pointer-events: none;
 }
 
@@ -9,6 +9,14 @@
   }
 }
 
+/* responsive ipad and above devices */
+@media only screen and (min-width: 768px) {
+  .App-logo {
+    height: 15vmin;
+  }
+}
+
+/* animations */
 @keyframes App-logo-scale {
   0% {
     transform: scale(1);
