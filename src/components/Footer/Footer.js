@@ -11,6 +11,10 @@ import {
 
 class Footer extends Component {
   render() {
+    const iconStyle = {
+      color: "black",
+      textDecoration: "none",
+    };
     return (
       <footer>
         <div>
@@ -45,9 +49,9 @@ class Footer extends Component {
             lorem ipsum dolor sit amet, consectetur adip
           </div>
           <div className="socialMedia">
-            <IoLogoFacebook />
+            <IoLogoFacebook style={iconStyle} />
             <a href="https://wa.me/7306757656" target="_blank">
-              <IoLogoWhatsapp />
+              <IoLogoWhatsapp style={iconStyle} />
             </a>
           </div>
         </div>

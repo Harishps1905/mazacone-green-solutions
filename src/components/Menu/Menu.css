@@ -12,6 +12,7 @@
   font-size: 8vw;
   font-family: DosisBold;
   backdrop-filter: blur(2px);
+  text-decoration: none;
 }
 .menuClose {
   position: absolute;

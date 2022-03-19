@@ -1,22 +1,27 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types"; // ES6
+import { Link } from "react-router-dom";
 import "./Menu.css";
 class Menu extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      menus: ["Home", "Products", "Services", "About Us"],
-    };
   }
-
-  menuList(menu) {
-    return <span className="menuList">{menu}</span>;
-  }
+  menuList = (menuItem) => {
+    return (
+      <span className="menuList" onClick={this.closeButton}>
+        {menuItem}
+      </span>
+    );
+  };
   closeButton = () => {
     this.props.mobileMenuHandler();
   };
+
   render() {
+    const navStyle = {
+      color: "black",
+      textDecoration: "none",
+    };
     return (
       <nav className="menu">
         <svg
@@ -45,7 +50,18 @@ class Menu extends Component {
             stroke-width="8"
           />
         </svg>
-        {this.state.menus.map((menu) => this.menuList(menu))}
+        <Link style={navStyle} to="/">
+          {this.menuList("Home")}
+        </Link>
+        <Link style={navStyle} to="/Products">
+          {this.menuList("Products")}
+        </Link>
+        <Link style={navStyle} to="/Services">
+          {this.menuList("Services")}
+        </Link>
+        <Link style={navStyle} to="/AboutUs">
+          {this.menuList("About Us")}
+        </Link>
       </nav>
     );
   }
