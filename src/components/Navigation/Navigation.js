@@ -2,15 +2,26 @@ import React, { Component } from "react";
 import "./Navigation.css";
 import logo from "../../assets/mazacone_logo.png";
 import fullLogo from "../../assets/mazacone_txt_logo2.png";
+import fullGradLogo from "../../assets/mazacone_txt_logo2grad.png";
 import Menu from "../Menu/Menu";
 class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
       mobileMenu: false,
+      width: window.innerWidth,
     };
   }
 
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth });
+  };
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
   hamburger = () => {
     if (this.state.mobileMenu) {
       this.setState({
@@ -27,10 +38,10 @@ class Navigation extends Component {
     return (
       <nav className="navigation">
         <div className="Brandname flex-row">
-          <img src={fullLogo} />
+          <img src={this.state.width < 600 ? logo : fullLogo} />
         </div>
         <svg
-          className="hamburger"
+          className="hamburger desktopHide"
           width="60"
           height="50"
           viewBox="0 0 60 50"
@@ -44,7 +55,7 @@ class Navigation extends Component {
             stroke-width="9"
           />
         </svg>
-        {this.state.mobileMenu ? (
+        {this.state.mobileMenu || this.state.width > 600 ? (
           <Menu mobileMenuHandler={this.hamburger} />
         ) : null}
       </nav>

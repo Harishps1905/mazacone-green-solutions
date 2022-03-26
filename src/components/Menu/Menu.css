@@ -21,3 +21,18 @@
   height: 25px;
   width: auto;
 }
+
+/* Desktop and ipad styles */
+@media only screen and (min-width: 600px) {
+  .menu {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    background-color: transparent;
+  }
+  .menu a {
+    margin-left: 20px;
+  }
+}

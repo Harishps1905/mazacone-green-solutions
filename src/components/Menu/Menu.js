@@ -25,7 +25,7 @@ class Menu extends Component {
     return (
       <nav className="menu">
         <svg
-          className="menuClose"
+          className="menuClose desktopHide"
           width="43"
           height="42"
           viewBox="0 0 43 42"

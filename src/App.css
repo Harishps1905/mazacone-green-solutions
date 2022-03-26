@@ -56,3 +56,13 @@
   height: 900px;
   padding-top: 100px;
 }
+
+/* Desktop and ipad styles */
+@media only screen and (min-width: 600px) {
+  .App {
+    background-size: 220px;
+  }
+  .desktopHide {
+    display: none;
+  }
+}
