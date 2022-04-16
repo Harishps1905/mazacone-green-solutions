@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Navigation.css";
 import logo from "../../assets/mazacone_logo.png";
 import fullLogo from "../../assets/mazacone_txt_logo2.png";
-import fullGradLogo from "../../assets/mazacone_txt_logo2grad.png";
+// import fullGradLogo from "../../assets/mazacone_txt_logo2grad.png";
 import Menu from "../Menu/Menu";
 class Navigation extends Component {
   constructor(props) {
@@ -24,9 +24,11 @@ class Navigation extends Component {
   }
   hamburger = () => {
     if (this.state.mobileMenu) {
-      this.setState({
-        mobileMenu: false,
-      });
+      setTimeout(() => {
+        this.setState({
+          mobileMenu: false,
+        });
+      }, 2000);
     } else {
       this.setState({
         mobileMenu: true,
@@ -36,29 +38,31 @@ class Navigation extends Component {
 
   render() {
     return (
-      <nav className="navigation">
-        <div className="Brandname flex-row">
-          <img src={this.state.width < 600 ? logo : fullLogo} />
-        </div>
-        <svg
-          className="hamburger desktopHide"
-          width="60"
-          height="50"
-          viewBox="0 0 60 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          onClick={this.hamburger}
-        >
-          <path
-            d="M0 5H60M0 24.8305H60M0 44.661H60"
-            stroke="#0096ff"
-            stroke-width="9"
-          />
-        </svg>
-        {this.state.mobileMenu || this.state.width > 600 ? (
-          <Menu mobileMenuHandler={this.hamburger} />
-        ) : null}
-      </nav>
+      <section id="mainNav">
+        <nav className="navigation">
+          <div className="Brandname flex-row">
+            <img src={this.state.width < 600 ? logo : fullLogo} />
+          </div>
+          <svg
+            className="hamburger desktopHide"
+            width="60"
+            height="50"
+            viewBox="0 0 60 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={this.hamburger}
+          >
+            <path
+              d="M0 5H60M0 24.8305H60M0 44.661H60"
+              stroke="#0096ff"
+              strokeWidth="9"
+            />
+          </svg>
+          {this.state.mobileMenu || this.state.width > 600 ? (
+            <Menu mobileMenuHandler={this.hamburger} />
+          ) : null}
+        </nav>
+      </section>
     );
   }
 }

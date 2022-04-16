@@ -35,6 +35,21 @@ nav.navigation {
   nav.navigation {
     padding: 5px 30px;
   }
-  .Brandname:hover img {
+  /* .Brandname:hover img {
+  } */
+}
+
+/* Desktop and ipad styles */
+@media only screen and (min-width: 1200px) {
+  #mainNav {
+    height: 60px;
+    width: 100vw;
+    background-color: #fff;
+  }
+  nav.navigation {
+    transform: translateX(-50%);
+    left: 50%;
+    max-width: 1200px;
+    width: 1200px;
   }
 }

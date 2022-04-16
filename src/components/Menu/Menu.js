@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types"; // ES6
 import { Link } from "react-router-dom";
+import fullLogo from "../../assets/mazacone_txt_logo2.png";
+
 import "./Menu.css";
 class Menu extends Component {
   constructor(props) {
@@ -14,7 +16,12 @@ class Menu extends Component {
     );
   };
   closeButton = () => {
-    this.props.mobileMenuHandler();
+    let menu = document.querySelector(".menu");
+    menu.classList.toggle("slideUp");
+    setTimeout(() => {
+      menu.classList.toggle("slideUp", "animationNone");
+      this.props.mobileMenuHandler();
+    }, 500);
   };
 
   render() {
@@ -39,7 +46,7 @@ class Menu extends Component {
             x2="38.5269"
             y2="3.17158"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
           <line
             x1="3.82843"
@@ -47,9 +54,10 @@ class Menu extends Component {
             x2="39.1838"
             y2="38.6622"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
         </svg>
+        <img className="menuLogo desktopHide" src={fullLogo} />
         <Link style={navStyle} to="/">
           {this.menuList("Home")}
         </Link>
