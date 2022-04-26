@@ -9,13 +9,14 @@
   color: rgb(8, 8, 8);
   align-items: center;
   /* border-radius: 20px; */
-  font-size: 8vw;
+  font-size: 30px;
   font-family: DosisBold;
   backdrop-filter: blur(2px);
   text-decoration: none;
   top: -1110%;
   left: 0;
   animation: slide-down 1s 0s forwards ease-in-out;
+  z-index: 99999;
 }
 .slideUp {
   animation: slide-up 1s 0s forwards ease-in-out !important;

@@ -57,6 +57,14 @@
   padding-top: 100px;
 }
 
+#contactLogo {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 /* Desktop and ipad styles */
 @media only screen and (min-width: 600px) {
   .App {
