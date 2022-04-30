@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types"; // ES6
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import fullLogo from "../../assets/mazacone_txt_logo2.png";
 
 import "./Menu.css";
@@ -58,18 +58,18 @@ class Menu extends Component {
           />
         </svg>
         <img className="menuLogo desktopHide" src={fullLogo} />
-        <Link style={navStyle} to="/">
+        <NavLink style={navStyle} activeClassName="menuactive" to="/">
           {this.menuList("Home")}
-        </Link>
-        <Link style={navStyle} to="/Products">
+        </NavLink>
+        <NavLink style={navStyle} to="/Products" activeClassName="menuactive">
           {this.menuList("Products")}
-        </Link>
-        <Link style={navStyle} to="/Services">
+        </NavLink>
+        <NavLink style={navStyle} to="/Services" activeClassName="menuactive">
           {this.menuList("Services")}
-        </Link>
-        <Link style={navStyle} to="/AboutUs">
+        </NavLink>
+        <NavLink style={navStyle} to="/AboutUs" activeClassName="menuactive">
           {this.menuList("About Us")}
-        </Link>
+        </NavLink>
       </nav>
     );
   }

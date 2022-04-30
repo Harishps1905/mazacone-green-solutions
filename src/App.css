@@ -4,7 +4,6 @@
 .AppLoader {
   min-height: 100vh;
   background-color: #fff;
-  position: relative;
 }
 .AppLoader {
   display: flex;
@@ -52,9 +51,11 @@
   align-items: center;
   justify-content: center;
 }
-.dummy {
-  height: 900px;
-  padding-top: 100px;
+.pagescontainer {
+  padding-top: 60px;
+  max-width: 1000px;
+  width: 100vw;
+  margin: 0 auto;
 }
 
 #contactLogo {

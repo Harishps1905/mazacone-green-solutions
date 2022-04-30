@@ -1,3 +1,10 @@
+#mainNav {
+  z-index: 999;
+  height: 60px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
 nav.navigation {
   display: flex;
   padding: 5px;
@@ -13,6 +20,7 @@ nav.navigation {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
 }
 .Brandname {
   text-transform: uppercase;
@@ -45,6 +53,7 @@ nav.navigation {
     height: 60px;
     width: 100vw;
     background-color: #fff;
+    position: fixed;
   }
   nav.navigation {
     transform: translateX(-50%);
@@ -52,4 +61,8 @@ nav.navigation {
     max-width: 1200px;
     width: 1200px;
   }
+}
+
+.hamburgerEvent {
+  pointer-events: none;
 }

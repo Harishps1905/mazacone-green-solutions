@@ -1,0 +1,13 @@
+#products {
+  max-width: 1000px;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.productlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
