@@ -6,16 +6,14 @@ import medicalCover from "../../assets/medical_cover.jpg";
 // or get all of the named exports for further usage
 import * as bootstrap from "bootstrap";
 
-const Product = (props) => {
-  let Product = props.Product;
-  // console.log(Product.Color);
-  return (
-    <>
+const Product = ({ products }) => (
+  <>
+    {products.map((product, i) => (
       <div id="container">
         {/* <!-- Start	Product details --> */}
         <div className="product-details">
           {/* <!-- 	Product Name --> */}
-          <h1>{Product.CoverType}</h1>
+          <h1>{product.name}</h1>
 
           {/* <!-- The most important information about the product --> */}
           <p className="information">
@@ -30,40 +28,45 @@ const Product = (props) => {
         {/* Start product image & Information */}
 
         <div className="product-image">
-          <img src={medicalCover} alt="Omar Dsoky" />
+          <img src={product.src} alt="Omar Dsoky" />
           <div className="info">
-            <h2>{Product.CoverType}</h2>
+            <h2>{product.name}</h2>
             <ul>
               <li>
                 <strong>Design: </strong>
-                {Product.Design}
+                {product.Design}
               </li>
               <li>
                 <strong>Usage: </strong>
-                {Product.Usage}
+                {product.Usage}
               </li>
               <li>
                 <strong>Color: </strong>
-                {Product.Color}
+                {product.Color}
               </li>
               <li>
                 <strong>Dimension: </strong>
-                {Product.Dimension}
+                {product.Dimension}
               </li>
               <li>
                 <strong>Thickness: </strong>
-                {Product.Thickness}
-              </li>
-              <li>
-                <strong>price: </strong>
-                {Product.price}
+                {product.Thickness}
               </li>
             </ul>
           </div>
         </div>
       </div>
-    </>
-  );
-};
+      // <li key={i}>
+      //   <figure>
+      //     <img src={product.src} alt={product.name} />
+      //     <figcaption>
+      //       <div>{product.name} </div>
+      //       <span>{product.type}</span>
+      //     </figcaption>
+      //   </figure>
+      // </li>
+    ))}
+  </>
+);
 
 export default Product;

@@ -58,9 +58,9 @@ class Footer extends Component {
           <Link style={navStyle} to="/Products">
             {this.menuList("Products")}
           </Link>
-          <Link style={navStyle} to="/Services">
+          {/* <Link style={navStyle} to="/Services">
             {this.menuList("Services")}
-          </Link>
+          </Link> */}
           <Link style={navStyle} to="/AboutUs">
             {this.menuList("About Us")}
           </Link>

@@ -7,6 +7,14 @@ footer {
   justify-content: space-evenly;
   color: #fff;
 }
+
+footer .menuList {
+  transition: all 0.3s ease-in-out;
+}
+footer .menuList:hover {
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+}
 .location,
 .mobile,
 .mail {

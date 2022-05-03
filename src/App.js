@@ -24,14 +24,27 @@ class App extends Component {
   }
 
   componentDidMount() {
+    let visited = localStorage["alreadyVisited"];
+
+    console.log(!this.state.restrictPopup);
     // this simulates an async action, after which the component will render the content
-    demoAsyncCall().then(() =>
+    demoAsyncCall().then(() => {
+      if (visited) {
+        this.setState({ showPopup: false });
+        //do not view Popup
+      } else {
+        //this is the first time
+        localStorage["alreadyVisited"] = true;
+        this.setState({
+          showPopup: !this.state.showPopup,
+        });
+      }
+
       this.setState({
         loading: false,
         bgAnime: true,
-        showPopup: !this.state.showPopup,
-      })
-    );
+      });
+    });
   }
 
   popupHandler = () => {
@@ -57,13 +70,11 @@ class App extends Component {
         <div className={bgAnime ? "App" : "AppLoader"}>
           {showPopup ? <Contactform formStatus={this.popupHandler} /> : null}
           <Navigation />
-          <div id="contactLogo" onClick={this.popupHandler}>
-            Contact
-          </div>
+          <div id="contactLogo" onClick={this.popupHandler}></div>
           <div className="pagescontainer">
             <Routes>
               <Route path="/Products" element={<Products />} />
-              <Route path="/Services" element={<Services />} />
+              {/* <Route path="/Services" element={<Services />} /> */}
               <Route path="/AboutUs" element={<AboutUs />} />
             </Routes>
           </div>

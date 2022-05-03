@@ -58,16 +58,16 @@ class Menu extends Component {
           />
         </svg>
         <img className="menuLogo desktopHide" src={fullLogo} />
-        <NavLink style={navStyle} activeClassName="menuactive" to="/">
+        <NavLink style={navStyle} to="/">
           {this.menuList("Home")}
         </NavLink>
-        <NavLink style={navStyle} to="/Products" activeClassName="menuactive">
+        <NavLink style={navStyle} to="/Products">
           {this.menuList("Products")}
         </NavLink>
-        <NavLink style={navStyle} to="/Services" activeClassName="menuactive">
+        {/* <NavLink style={navStyle} to="/Services">
           {this.menuList("Services")}
-        </NavLink>
-        <NavLink style={navStyle} to="/AboutUs" activeClassName="menuactive">
+        </NavLink> */}
+        <NavLink style={navStyle} to="/AboutUs">
           {this.menuList("About Us")}
         </NavLink>
       </nav>

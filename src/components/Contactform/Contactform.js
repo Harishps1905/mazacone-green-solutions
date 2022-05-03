@@ -1,12 +1,37 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
+import emailjs from "@emailjs/browser";
 import PropTypes from "prop-types"; // ES6
 import "./Contactform.css";
 class Contactform extends Component {
   constructor(props) {
     super(props);
+    this.form = createRef();
   }
   closeButton = () => {
     this.props.formStatus();
+  };
+  sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_56phzm9",
+        "template_k9pns74",
+        this.form.current,
+        "Oc4CPRDQ3wt1yN9ws"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      )
+      .then((result) => {
+        this.props.formStatus();
+      });
+    e.target.reset();
   };
   render() {
     return (
@@ -31,16 +56,31 @@ class Contactform extends Component {
                 </div>
                 <div className="right-container">
                   <div className="right-inner-container">
-                    <form action="#">
+                    <form ref={this.form} onSubmit={this.sendEmail}>
                       <h2 className="lg-view">Contact</h2>
                       <h2 className="sm-view">Let's Chat</h2>
                       <p>* Required</p>
 
-                      <input type="text" placeholder="Name *" required />
-                      <input type="email" placeholder="Email *" required />
-                      <input type="phone" placeholder="Phone" required />
-                      <textarea rows="4" placeholder="Message"></textarea>
-                      <button onClick={this.closeButton}>Submit</button>
+                      <input
+                        type="text"
+                        placeholder="Name *"
+                        name="name"
+                        required
+                      />
+                      <input
+                        type="phone"
+                        placeholder="Phone *"
+                        name="phone"
+                        required
+                      />
+                      <input type="email" placeholder="Email" name="email" />
+                      <textarea
+                        rows="4"
+                        placeholder="Message"
+                        name="message"
+                        required
+                      ></textarea>
+                      <button type="submit">Submit</button>
                     </form>
                   </div>
                 </div>

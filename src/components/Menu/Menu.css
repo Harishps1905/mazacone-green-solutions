@@ -53,11 +53,11 @@
   width: 210px;
   height: auto;
 }
-.menuList {
+nav .menuList {
   transition: all 0.3s ease-in-out;
   display: block;
 }
-.menuList:hover {
+nav .menuList:hover {
   transition: all 0.3s ease-in-out;
   transform: skew(5deg, 5deg);
 }
