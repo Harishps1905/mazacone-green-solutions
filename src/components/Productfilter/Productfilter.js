@@ -3,7 +3,7 @@ import "./Productfilter.module.css";
 
 const Productfilter = ({ onClickAll, all, onClick, filters }) => {
   return (
-    <form>
+    <form id="productfilter">
       <ul>
         <li onClick={onClickAll}>
           <input type="checkbox" checked={all} />

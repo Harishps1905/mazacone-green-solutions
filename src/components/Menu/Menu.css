@@ -15,11 +15,11 @@
   text-decoration: none;
   top: -1110%;
   left: 0;
-  animation: slide-down 1s 0s forwards ease-in-out;
+  animation: slide-down 0.5s 0s forwards ease-in-out;
   z-index: 99999;
 }
 .slideUp {
-  animation: slide-up 1s 0s forwards ease-in-out !important;
+  animation: slide-up 0.5s 0s forwards ease-in-out !important;
 }
 .animationNone {
   animation: none;
@@ -30,13 +30,13 @@
     top: 0;
   }
   to {
-    top: -1110%;
+    top: -1500%;
   }
 }
 
 @keyframes slide-down {
   from {
-    top: -1110%;
+    top: -1500%;
   }
   to {
     top: 0%;

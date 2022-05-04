@@ -1,35 +1,62 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Product.css";
+// import "./ProductsImages/3jpg";
 import "bootstrap";
+import Imgslider from "./Imgslider/Imgslider";
 import medicalCover from "../../assets/medical_cover.jpg";
-// or get all of the named exports for further usage
-import * as bootstrap from "bootstrap";
 
-const Product = ({ products }) => (
-  <>
-    {products.map((product, i) => (
-      <div id="container">
-        {/* <!-- Start	Product details --> */}
-        <div className="product-details">
-          {/* <!-- 	Product Name --> */}
-          <h1>{product.name}</h1>
+const Product = ({ products }) => {
+  const DimThick = ({ DT }) => {
+    const [dim, setDim] = useState(null);
+    const [thicknessState, setThicknessState] = useState(DT.Thickness[0]);
 
-          {/* <!-- The most important information about the product --> */}
-          <p className="information">
-            " The manufacturer of a wide assortment of Cotton Cloth Bag, Paper
-            Bag, Grocerry Bag and many more. These products are known for their
-            matchless quality and remarkable finish."
-          </p>
-        </div>
+    const handleDimensions = (e) => {
+      let currentDimention = e.target.value;
+      let i = DT.Dimension.indexOf(currentDimention);
+      setThicknessState(DT.Thickness[i]);
+    };
+    if (DT.Dimension.length > 1) {
+      return (
+        <>
+          <li>
+            <strong>Dimension/Size: </strong>
+            <select id="Dimensions" onChange={handleDimensions}>
+              {DT.Dimension.map((dim, i) => (
+                <option value={dim} key={i}>
+                  {dim}
+                </option>
+              ))}
+            </select>
+          </li>
+          <li>
+            <strong>Thickness: </strong>
+            {thicknessState}
+          </li>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <li>
+            <strong>Dimension/Size: </strong>
+            {DT.Dimension[0]}
+          </li>
+          <li>
+            <strong>Thickness: </strong>
+            {thicknessState}
+          </li>
+        </>
+      );
+    }
+  };
 
-        {/* <!-- 	End	Product details   --> */}
-
-        {/* Start product image & Information */}
-
-        <div className="product-image">
-          <img src={product.src} alt="Omar Dsoky" />
-          <div className="info">
+  return (
+    <>
+      {products.map((product, i) => (
+        <div id="container" key={i}>
+          {/* <!-- Start	Product details --> */}
+          <div className="product-details">
             <h2>{product.name}</h2>
             <ul>
               <li>
@@ -44,29 +71,48 @@ const Product = ({ products }) => (
                 <strong>Color: </strong>
                 {product.Color}
               </li>
-              <li>
+              <DimThick DT={product} />
+              {/* <li>
                 <strong>Dimension: </strong>
-                {product.Dimension}
+                <Dimension
+                  dimentions={product.Dimension}
+                  thickness={product.Thickness}
+                />
               </li>
               <li>
                 <strong>Thickness: </strong>
-                {product.Thickness}
-              </li>
+                {thicknessState}
+              </li> */}
             </ul>
           </div>
+
+          {/* <!-- 	End	Product details   --> */}
+
+          {/* Start product image & Information */}
+
+          <div className="product-image">
+            {/* {product.src.length == 1 ? (
+              <img src="./ProductsImages/3jpg" alt="Omar Dsoky" />
+            ) : ( */}
+            <Imgslider productimgs={product.src} />
+            {/* )} */}
+
+            <div className="info">
+              {/* <!-- 	Product Name --> */}
+              <h1>{product.name}</h1>
+
+              {/* <!-- The most important information about the product --> */}
+              <p className="information">
+                " The manufacturer of a wide assortment of Cotton Cloth Bag,
+                Paper Bag, Grocerry Bag and many more. These products are known
+                for their matchless quality and remarkable finish."
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-      // <li key={i}>
-      //   <figure>
-      //     <img src={product.src} alt={product.name} />
-      //     <figcaption>
-      //       <div>{product.name} </div>
-      //       <span>{product.type}</span>
-      //     </figcaption>
-      //   </figure>
-      // </li>
-    ))}
-  </>
-);
+      ))}
+    </>
+  );
+};
 
 export default Product;

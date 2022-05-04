@@ -1,5 +1,8 @@
 /* #7cfe61 */
 /* #0096ff */
+strong {
+  font-family: "DosisBold";
+}
 .App,
 .AppLoader {
   min-height: 100vh;

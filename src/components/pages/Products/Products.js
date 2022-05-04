@@ -1,62 +1,135 @@
 import React, { Component } from "react";
 import "./Products.css";
 import Product from "../../Product/Product";
-// import Productfilter from "../../Productfilter/Productfilter";
+import Productfilter from "../../Productfilter/Productfilter";
+
+import textileCPC from "./ProductsImages/textile.jpg";
+import medicinecpc from "./ProductsImages/medicinecpc.jpg";
+import bakeryfoldingcpc from "./ProductsImages/bakeryfoldingcpc.jpg";
+import pcb1 from "./ProductsImages/pcb1.jpg";
+import pcb2 from "./ProductsImages/pcb2.jpg";
+import pcb3 from "./ProductsImages/pcb3.jpg";
+import pcb4 from "./ProductsImages/pcb4.jpg";
+import pcb5 from "./ProductsImages/pcb5.jpg";
+import pcb6 from "./ProductsImages/pcb6.jpg";
+import pcb7 from "./ProductsImages/pcb7.jpg";
+import pgt from "./ProductsImages/pgt.jpg";
+import pgw from "./ProductsImages/pgw.jpg";
+import cb1 from "./ProductsImages/cb1.jpg";
+import cb2 from "./ProductsImages/cb2.jpg";
+import cb3 from "./ProductsImages/cb3.jpg";
+import cb4 from "./ProductsImages/cb4.jpg";
+import nvdcb from "./ProductsImages/nvdcb.jpg";
+import nvwcb from "./ProductsImages/nvwcb.jpg";
+
 const products = [
   {
-    name: "textile craft paper covers",
+    name: "TEXTILE CRAFT PAPER COVER",
     type: "paper covers",
     Design: "Plain",
-    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/1.jpg?raw=true",
-    Usage: "textile",
-    Color: "BROWN",
-    Dimension: ["42*50", "36*48"],
-    Thickness: ["46 GSM", "46 GSM"],
+    src: [textileCPC],
+    Usage: "Textile",
+    Color: "Brown",
+    Dimension: [
+      "Select Dimension",
+      "42*50",
+      "36*48",
+      "31*44",
+      "26*40",
+      "22*36",
+      "22*33",
+      "18*33",
+      "18*24",
+      "14*44",
+    ],
+    Thickness: [
+      "** GSM",
+      "46 GSM",
+      "46 GSM",
+      "46 GSM",
+      "47 GSM",
+      "47 GSM",
+      "47 GSM",
+      "47 GSM",
+      "47 GSM",
+      "47 GSM",
+    ],
   },
   {
-    name: "Daria Shevtsova",
-    type: "paper carry bags",
-    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/2.jpg?raw=true",
-    Usage: "textile",
-    Color: "BROWN",
-    Dimension: ["42*50", "36*48"],
-    Thickness: ["46 GSM", "46 GSM"],
+    name: "MEDICINE CRAFT PAPER COVER",
+    type: "paper covers",
+    Design: "Plain",
+    src: [medicinecpc],
+    Usage: "Medicals",
+    Color: "Brown/White",
+    Dimension: ["Select Dimension", "12*16", "10*14", "9*13", "7*12"],
+    Thickness: ["** GSM", "44 GSM", "44 GSM", "44 GSM", "44 GSM"],
   },
   {
-    name: "Kasuma",
+    name: "BAKERY/FOLDING CRAFT PAPER COVER",
+    type: "paper covers",
+    Design: "Plain",
+    src: [bakeryfoldingcpc],
+    Usage: "Bakery/Folding",
+    Color: "Brown",
+    Dimension: [
+      "Select Dimension",
+      "22*9*44",
+      "18*8*36",
+      "14*8*30",
+      "12*6*28",
+      "10*4*24",
+      "8*4*20",
+    ],
+    Thickness: [
+      "** GSM",
+      "46 GSM",
+      "44 GSM",
+      "44 GSM",
+      "44 GSM",
+      "44 GSM",
+      "44 GSM",
+    ],
+  },
+  {
+    name: "PAPER CARRY BAG - BOX TYPE & V BOTTOM",
+    type: "paper covers",
+    Design: "Plain",
+    src: [pcb1, pcb2, pcb3, pcb4, pcb5, pcb6, pcb7],
+    Usage: "Medicals",
+    Color: "As per requirement",
+    Dimension: ["Customized sizes available upon requirement"],
+    Thickness: ["80 GSM, 100 GSM, 120 GSM, 200 GSM, 220 GSM, 250 GSM"],
+  },
+  {
+    name: "TEA GLASS 130ML",
     type: "paper cups",
-    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/3.jpg?raw=true",
-    Usage: "textile",
-    Color: "BROWN",
-    Dimension: ["42*50", "36*48"],
-    Thickness: ["46 GSM", "46 GSM"],
+    Design: "Plain",
+    src: [pgt],
+    Usage: "Partying/Celebration",
+    Color: "As per requirement",
+    Dimension: ["130ML"],
+    Thickness: ["----"],
   },
   {
-    name: "Dominika Roseclay",
-    type: "D cut bags",
-    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/4.jpg?raw=true",
-    Usage: "textile",
-    Color: "BROWN",
-    Dimension: ["42*50", "36*48"],
-    Thickness: ["46 GSM", "46 GSM"],
+    name: "WATER GLASS 150ML",
+    type: "paper cups",
+    Design: "Plain",
+    src: [pgw],
+    Usage: "Partying/Celebration",
+    Color: "As per requirement",
+    Dimension: ["150ML"],
+    Thickness: ["----"],
   },
   {
-    name: "Scott Webb",
-    type: "W cut bags",
-    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/5.jpg?raw=true",
-    Usage: "textile",
-    Color: "BROWN",
-    Dimension: ["42*50", "36*48"],
-    Thickness: ["46 GSM", "46 GSM"],
-  },
-  {
-    name: "Jeffrey Czum",
+    name: "CAKE BOXES",
     type: "Cake box",
-    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/6.jpg?raw=true",
-    Usage: "textile",
-    Color: "BROWN",
-    Dimension: ["42*50", "36*48"],
-    Thickness: ["46 GSM", "46 GSM"],
+    Design: "Customized sizes available upon requirement",
+    src: [pgw],
+    Usage: "Cake shop",
+    Color: "As per requirement",
+    Dimension: ["150ML"],
+    Thickness: ["----"],
   },
 ];
 
@@ -68,23 +141,6 @@ const filters = [
   { name: "W cut bags", status: false },
   { name: "Cake box", status: false },
 ];
-
-const Filters = ({ onClickAll, all, onClick, filters }) => (
-  <form id="productfilter">
-    <ul>
-      <li onClick={onClickAll}>
-        <input type="checkbox" checked={all} />
-        <label htmlFor="all">All</label>
-      </li>
-      {filters.map((filter, i) => (
-        <li key={i} data-index={i} onClick={onClick}>
-          <input id={filter.name} type="checkbox" checked={filter.status} />
-          <label htmlFor={filter.name}>{filter.name}</label>
-        </li>
-      ))}
-    </ul>
-  </form>
-);
 
 class Products extends Component {
   state = {
@@ -156,17 +212,19 @@ class Products extends Component {
     const { filters, all } = this.state;
     return (
       <div>
-        <Filters
+        <Productfilter
           onClickAll={this.setAll}
           all={all}
           onClick={this.setFilter}
           filters={filters}
         />
-        {all ? (
-          <Product products={products} />
-        ) : (
-          <Product products={this.state.products} />
-        )}
+        <div className="productcontainer">
+          {all ? (
+            <Product products={products} />
+          ) : (
+            <Product products={this.state.products} />
+          )}
+        </div>
       </div>
     );
   }

@@ -28,7 +28,7 @@ class Navigation extends Component {
         this.setState({
           mobileMenu: false,
         });
-      }, 2000);
+      }, 600);
     } else {
       this.setState({
         mobileMenu: true,

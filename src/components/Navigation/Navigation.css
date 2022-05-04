@@ -4,6 +4,7 @@
   width: 100vw;
   top: 0;
   left: 0;
+  position: fixed;
 }
 nav.navigation {
   display: flex;

@@ -18,10 +18,7 @@ class Menu extends Component {
   closeButton = () => {
     let menu = document.querySelector(".menu");
     menu.classList.toggle("slideUp");
-    setTimeout(() => {
-      menu.classList.toggle("slideUp", "animationNone");
-      this.props.mobileMenuHandler();
-    }, 500);
+    this.props.mobileMenuHandler();
   };
 
   render() {
