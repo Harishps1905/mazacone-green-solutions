@@ -1,11 +1,19 @@
 footer {
   padding: 30px 20px;
   background-color: #575a6c;
+  color: #fff;
+}
+#footercontainer {
+  max-width: 1000px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-evenly;
-  color: #fff;
+  margin: 0 auto;
+}
+#footercontainer .ftleft,
+#footercontainer .ftright {
+  flex-basis: 50%;
 }
 
 footer .menuList {
@@ -38,15 +46,26 @@ footer .menuList:hover {
 .description,
 .socialMedia {
   padding-top: 10px;
+  line-height: 1.2;
 }
+.socialMedia {
+  width: 100px;
+  height: 35px;
+}
+
+.socialMedia a {
+  display: inline-block;
+  width: 35px;
+}
+
 .footerLogo {
   width: 150px;
   height: auto;
 }
 
 /* Desktop and ipad styles */
-@media only screen and (min-width: 600px) {
-  footer {
-    flex-direction: row;
+@media only screen and (max-width: 600px) {
+  #footercontainer {
+    flex-direction: column;
   }
 }

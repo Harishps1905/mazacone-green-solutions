@@ -4,7 +4,6 @@ import "./Product.css";
 // import "./ProductsImages/3jpg";
 import "bootstrap";
 import Imgslider from "./Imgslider/Imgslider";
-import medicalCover from "../../assets/medical_cover.jpg";
 
 const Product = ({ products }) => {
   const DimThick = ({ DT }) => {
@@ -21,17 +20,19 @@ const Product = ({ products }) => {
         <>
           <li>
             <strong>Dimension/Size: </strong>
-            <select id="Dimensions" onChange={handleDimensions}>
-              {DT.Dimension.map((dim, i) => (
-                <option value={dim} key={i}>
-                  {dim}
-                </option>
-              ))}
-            </select>
+            <span>
+              <select id="Dimensions" onChange={handleDimensions}>
+                {DT.Dimension.map((dim, i) => (
+                  <option value={dim} key={i}>
+                    {dim}
+                  </option>
+                ))}
+              </select>
+            </span>
           </li>
           <li>
             <strong>Thickness: </strong>
-            {thicknessState}
+            <span>{thicknessState}</span>
           </li>
         </>
       );
@@ -40,11 +41,11 @@ const Product = ({ products }) => {
         <>
           <li>
             <strong>Dimension/Size: </strong>
-            {DT.Dimension[0]}
+            <span>{DT.Dimension[0]}</span>
           </li>
           <li>
             <strong>Thickness: </strong>
-            {thicknessState}
+            <span>{thicknessState}</span>
           </li>
         </>
       );
@@ -61,28 +62,17 @@ const Product = ({ products }) => {
             <ul>
               <li>
                 <strong>Design: </strong>
-                {product.Design}
+                <span>{product.Design}</span>
               </li>
               <li>
                 <strong>Usage: </strong>
-                {product.Usage}
+                <span>{product.Usage}</span>
               </li>
               <li>
                 <strong>Color: </strong>
-                {product.Color}
+                <span>{product.Color}</span>
               </li>
               <DimThick DT={product} />
-              {/* <li>
-                <strong>Dimension: </strong>
-                <Dimension
-                  dimentions={product.Dimension}
-                  thickness={product.Thickness}
-                />
-              </li>
-              <li>
-                <strong>Thickness: </strong>
-                {thicknessState}
-              </li> */}
             </ul>
           </div>
 
