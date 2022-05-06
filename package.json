@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Harishps1905.github.io/",
   "name": "mazacone-green-solutions",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.1.3",
     "emailjs": "^4.0.0",
+    "gh-pages": "^3.2.3",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
@@ -20,6 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

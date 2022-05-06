@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Products.css";
 import Product from "../../Product/Product";
 import Productfilter from "../../Productfilter/Productfilter";
+import Breadcrumb from "../../Breadcrumb/Breadcrumb";
 
 import textileCPC from "./ProductsImages/textile.jpg";
 import medicinecpc from "./ProductsImages/medicinecpc.jpg";
@@ -249,6 +250,7 @@ class Products extends Component {
     const { filters, all } = this.state;
     return (
       <div>
+        <Breadcrumb Page="Products" />
         <Productfilter
           onClickAll={this.setAll}
           all={all}
