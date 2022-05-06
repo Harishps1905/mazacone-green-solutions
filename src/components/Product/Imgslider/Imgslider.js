@@ -15,11 +15,17 @@ const Imgslider = ({ productimgs }) => {
     }, 2000);
   }, []);
 
-  return productimgs.length == 1 ? (
-    <img src={productimgs} alt="Omar Dsoky" />
-  ) : (
-    <img src={image} alt="Omar Dsoky" />
-  );
+  // return productimgs.length == 1 ? (
+  //   <img src={productimgs} alt="Omar Dsoky" />
+  // ) : (
+  //   <img src={image} alt="Omar Dsoky" />
+  // );
+
+  if (productimgs.length == 1) {
+    return <img src={productimgs} alt="Omar Dsoky" />;
+  } else if (productimgs.length > 1) {
+    return <img src={image} alt="Omar Dsoky" />;
+  }
   // return <img src={image} alt="Omar Dsoky" />;
 };
 
