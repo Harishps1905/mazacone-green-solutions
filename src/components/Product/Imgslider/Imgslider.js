@@ -1,32 +1,36 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
+let myCounter = 0;
+let timeout = null;
 
 const Imgslider = ({ productimgs }) => {
-  const [image, setimage] = useState(null);
-  useEffect(() => {
-    let count = 0;
-    setimage(productimgs[count]);
-    let change = () => {
-      count == productimgs.length - 1 ? (count = 0) : count++;
-      setimage(productimgs[count]);
-    };
-    setInterval(() => {
-      change();
-    }, 2000);
-  }, []);
+  const [count, setcount] = useState(0);
+  const [image, setimage] = useState(productimgs[0]);
 
-  // return productimgs.length == 1 ? (
-  //   <img src={productimgs} alt="Omar Dsoky" />
-  // ) : (
-  //   <img src={image} alt="Omar Dsoky" />
-  // );
+  // useEffect(() => {
+  //   return () => clearInterval(timeout);
+  // }, []);
 
-  if (productimgs.length == 1) {
-    return <img src={productimgs} alt="Omar Dsoky" />;
-  } else if (productimgs.length > 1) {
-    return <img src={image} alt="Omar Dsoky" />;
-  }
-  // return <img src={image} alt="Omar Dsoky" />;
+  // myCounter = count;
+  // timeout = setInterval(() => {
+  //   count == image.length - 1 ? setcount(0) : setcount((count) => count + 1);
+  //   setimage(productimgs[myCounter]);
+  //   console.log(count);
+  // }, 2000);
+  ///////////////////////////////////////////////
+  // useEffect(() => {
+  //   const interval = setInterval(() => {}, 1000);
+  //   return () => clearInterval(timeout);
+  // }, []);
+  // let change = () => {
+  //   count == image.length - 1 ? setcount(0) : setcount(count++);
+  //   setimage(image[count]);
+  //   console.log(image);
+  // };
+
+  // Also don't forget this
+
+  return <img src={image} alt="Omar Dsoky" />;
 };
 
 export default Imgslider;

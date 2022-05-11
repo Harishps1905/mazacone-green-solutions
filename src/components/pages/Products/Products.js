@@ -8,18 +8,18 @@ import textileCPC from "./ProductsImages/textile.jpg";
 import medicinecpc from "./ProductsImages/medicinecpc.jpg";
 import bakeryfoldingcpc from "./ProductsImages/bakeryfoldingcpc.jpg";
 import pcb1 from "./ProductsImages/pcb1.jpg";
-import pcb2 from "./ProductsImages/pcb2.jpg";
-import pcb3 from "./ProductsImages/pcb3.jpg";
-import pcb4 from "./ProductsImages/pcb4.jpg";
-import pcb5 from "./ProductsImages/pcb5.jpg";
-import pcb6 from "./ProductsImages/pcb6.jpg";
-import pcb7 from "./ProductsImages/pcb7.jpg";
+// import pcb2 from "./ProductsImages/pcb2.jpg";
+// import pcb3 from "./ProductsImages/pcb3.jpg";
+// import pcb4 from "./ProductsImages/pcb4.jpg";
+// import pcb5 from "./ProductsImages/pcb5.jpg";
+// import pcb6 from "./ProductsImages/pcb6.jpg";
+// import pcb7 from "./ProductsImages/pcb7.jpg";
 import pgt from "./ProductsImages/pgt.jpg";
 import pgw from "./ProductsImages/pgw.jpg";
 import cb1 from "./ProductsImages/cb1.jpg";
-import cb2 from "./ProductsImages/cb2.jpg";
-import cb3 from "./ProductsImages/cb3.jpg";
-import cb4 from "./ProductsImages/cb4.jpg";
+// import cb2 from "./ProductsImages/cb2.jpg";
+// import cb3 from "./ProductsImages/cb3.jpg";
+// import cb4 from "./ProductsImages/cb4.jpg";
 import nvdcb from "./ProductsImages/nvdcb.jpg";
 import nvwcb from "./ProductsImages/nvwcb.jpg";
 
@@ -96,7 +96,7 @@ const products = [
     name: "PAPER CARRY BAG - BOX TYPE & V BOTTOM",
     type: "paper carry bags",
     Design: "Plain",
-    src: [pcb1, pcb2, pcb3, pcb4, pcb5, pcb6, pcb7],
+    src: [pcb1],
     Usage: "Medicals",
     Color: "As per requirement",
     Dimension: ["Customized sizes available upon requirement"],
@@ -126,7 +126,7 @@ const products = [
     name: "CAKE BOXES",
     type: "Cake box",
     Design: "Customized upon requirement",
-    src: [cb1, cb2, cb3, cb4],
+    src: [cb1],
     Usage: "Cake shop",
     Color: "As per requirement",
     Dimension: ["Customized sizes available upon requirement"],

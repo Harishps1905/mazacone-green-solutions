@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./Product.css";
 // import "./ProductsImages/3jpg";
 import "bootstrap";
-import Imgslider from "./Imgslider/Imgslider";
+// import Imgslider from "./Imgslider/Imgslider";
 
 const Product = ({ products }) => {
   const DimThick = ({ DT }) => {
@@ -81,11 +81,7 @@ const Product = ({ products }) => {
           {/* Start product image & Information */}
 
           <div className="product-image">
-            {/* {product.src.length == 1 ? (
-              <img src="./ProductsImages/3jpg" alt="Omar Dsoky" />
-            ) : ( */}
-            <Imgslider productimgs={product.src} />
-            {/* )} */}
+            <img src={product.src} alt="Omar Dsoky" />
 
             <div className="info">
               {/* <!-- 	Product Name --> */}

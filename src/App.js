@@ -4,6 +4,7 @@ import Loader from "./components/Loader/Loader";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import Contactform from "./components/Contactform/Contactform";
+import Home from "./components/pages/Home/Home";
 import Products from "./components/pages/Products/Products";
 import Services from "./components/pages/Services/Services";
 import AboutUs from "./components/pages/AboutUs/AboutUs";
@@ -73,6 +74,7 @@ class App extends Component {
           <div id="contactLogo" onClick={this.popupHandler}></div>
           <div className="pagescontainer">
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/Products" element={<Products />} />
               {/* <Route path="/Services" element={<Services />} /> */}
               <Route path="/AboutUs" element={<AboutUs />} />
