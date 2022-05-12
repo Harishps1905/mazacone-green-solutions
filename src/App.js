@@ -27,7 +27,6 @@ class App extends Component {
   componentDidMount() {
     let visited = localStorage["alreadyVisited"];
 
-    console.log(!this.state.restrictPopup);
     // this simulates an async action, after which the component will render the content
     demoAsyncCall().then(() => {
       if (visited) {
