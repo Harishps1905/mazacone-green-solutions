@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import "./Product.css";
 // import "./ProductsImages/3jpg";
-import "bootstrap";
+
 // import Imgslider from "./Imgslider/Imgslider";
 
 const Product = ({ products }) => {
@@ -55,7 +55,7 @@ const Product = ({ products }) => {
   return (
     <>
       {products.map((product, i) => (
-        <div id="container" key={i}>
+        <div id="p-container" key={i}>
           {/* <!-- Start	Product details --> */}
           <div className="product-details">
             <h2>{product.name}</h2>
