@@ -6,9 +6,15 @@ class Contactform extends Component {
   constructor(props) {
     super(props);
     this.form = createRef();
+    this.state = {
+      notify: false,
+    };
   }
   closeButton = () => {
     this.props.formStatus();
+  };
+  notification = (note, color) => {
+    return <div className={color}>{note}</div>;
   };
   sendEmail = (e) => {
     e.preventDefault();
@@ -29,7 +35,11 @@ class Contactform extends Component {
         }
       )
       .then((result) => {
-        this.props.formStatus();
+        this.setState({ notify: true });
+        setTimeout(() => {
+          this.props.formStatus();
+          this.setState({ notify: false });
+        }, 5000);
       });
     e.target.reset();
   };
@@ -57,6 +67,15 @@ class Contactform extends Component {
                 <div className="right-container">
                   <div className="right-inner-container">
                     <form ref={this.form} onSubmit={this.sendEmail}>
+                      {this.state.notify
+                        ? this.notification(
+                            "Your message received successfully...",
+                            "green"
+                          )
+                        : this.notification(
+                            "Your message not received yet!!!!",
+                            "red"
+                          )}
                       <h2 className="lg-view">Contact</h2>
                       <h2 className="sm-view">Let's Chat</h2>
                       <p>* Required</p>
