@@ -3,6 +3,10 @@
   width: 100vw;
   margin: 0 auto;
 }
+.main-product-container {
+  display: flex;
+  justify-content: center;
+}
 
 .productlist {
   display: flex;
@@ -109,10 +113,6 @@ figure figcaption span {
   color: #969696;
 }
 
-#root a {
-  color: #faa7b7;
-}
-
 @keyframes transform {
   0%,
   100% {
@@ -152,4 +152,5 @@ figure figcaption span {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
 }

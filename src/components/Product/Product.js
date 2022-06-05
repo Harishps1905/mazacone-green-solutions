@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import "./Product.css";
+// import "./Product.css";
+import styles from "./Product.module.css";
 // import "./ProductsImages/3jpg";
 
 // import Imgslider from "./Imgslider/Imgslider";
@@ -21,7 +22,7 @@ const Product = ({ products }) => {
           <li>
             <strong>Dimension/Size: </strong>
             <span>
-              <select id="Dimensions" onChange={handleDimensions}>
+              <select id={styles.Dimensions} onChange={handleDimensions}>
                 {DT.Dimension.map((dim, i) => (
                   <option value={dim} key={i}>
                     {dim}
@@ -55,9 +56,9 @@ const Product = ({ products }) => {
   return (
     <>
       {products.map((product, i) => (
-        <div id="p-container" key={i}>
+        <div id={styles.pcontainer} key={i}>
           {/* <!-- Start	Product details --> */}
-          <div className="product-details">
+          <div className={styles.productdetails}>
             <h2>{product.name}</h2>
             <ul>
               <li>
@@ -80,15 +81,15 @@ const Product = ({ products }) => {
 
           {/* Start product image & Information */}
 
-          <div className="product-image">
+          <div className={styles.productimage}>
             <img src={product.src} alt="Omar Dsoky" />
 
-            <div className="info">
+            <div className={styles.info}>
               {/* <!-- 	Product Name --> */}
               <h1>{product.name}</h1>
 
               {/* <!-- The most important information about the product --> */}
-              <p className="information">
+              <p className={styles.information}>
                 " The manufacturer of a wide assortment of Cotton Cloth Bag,
                 Paper Bag, Grocerry Bag and many more. These products are known
                 for their matchless quality and remarkable finish."

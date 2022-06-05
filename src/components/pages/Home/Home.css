@@ -1,0 +1,19 @@
+.home-2 {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  background: url(./images/banner_bg.png) no-repeat center center fixed;
+  padding-bottom: 30px;
+  color: #fff;
+}
+.align-c {
+  text-align: center;
+  padding: 30px 30px 0;
+}
+.quotes {
+  font-size: 25px;
+  font-family: "DosisBold";
+}
+.rounded-rad {
+  border-radius: 5px;
+}

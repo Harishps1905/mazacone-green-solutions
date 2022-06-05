@@ -257,12 +257,14 @@ class Products extends Component {
           onClick={this.setFilter}
           filters={filters}
         />
-        <div className="productcontainer">
-          {all ? (
-            <Product products={products} />
-          ) : (
-            <Product products={this.state.products} />
-          )}
+        <div className="main-product-container">
+          <div className="productcontainer">
+            {all ? (
+              <Product products={products} />
+            ) : (
+              <Product products={this.state.products} />
+            )}
+          </div>
         </div>
       </div>
     );

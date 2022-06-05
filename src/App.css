@@ -15,13 +15,13 @@ strong {
   justify-content: center;
 }
 .App {
-  background-image: url("./assets/mazacone_logo.png");
+  /* background-image: url("./assets/mazacone_logo.png");
   min-width: 260px;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(219, 219, 219); */
 }
 /* .App::before {
   content: "";
@@ -55,8 +55,7 @@ strong {
   justify-content: center;
 }
 .pagescontainer {
-  padding-top: 60px;
-  max-width: 1000px;
+  padding-top: 50px;
   width: 100vw;
   margin: 0 auto;
 }
@@ -90,4 +89,9 @@ strong {
     height: 60px;
     right: 3%;
   }
+}
+
+.w-1000 {
+  max-width: 1000px;
+  margin: 0 auto;
 }

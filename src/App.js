@@ -73,7 +73,10 @@ class App extends Component {
           <div id="contactLogo" onClick={this.popupHandler}></div>
           <div className="pagescontainer">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={<Home popupHandler={this.popupHandler} />}
+              />
               <Route path="/Products" element={<Products />} />
               {/* <Route path="/Services" element={<Services />} /> */}
               <Route path="/AboutUs" element={<AboutUs />} />

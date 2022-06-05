@@ -49,10 +49,8 @@ class Footer extends Component {
                 <IoLocationSharp className="icon" />
               </span>
               <span>
-                MAZACONE GREEN SOLUTIONS OLD MARKET ROAD, <br />
-                BEHIND THREE STAR READY MADES PUTHUSSERY SHOPING CENTRE
-                ANGAMALY. <br />
-                PIN: 683 572 ERNAKULAM (DISTR.)
+                MAZACONE GREEN SOLUTIONS PAPER PRODUCTS THUMBOOR. P.O PIN 680
+                662 THRISSUR (DIST)
               </span>
             </div>
             <div className="mobile">
